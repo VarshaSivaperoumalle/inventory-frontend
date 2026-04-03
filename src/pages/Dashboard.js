@@ -4,7 +4,7 @@ import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import Sidebar from "../components/Sidebar";
 import Chatbot from "../components/Chatbot";
-
+const API = "https://inventory-backend-production-6b10.up.railway.app";
 // ── Tiny CSV / PDF-like text export helpers (no extra deps) ──────────────────
 function exportCSV(data) {
   const headers = ["#", "Product", "Category", "Quantity", "Price (₹)", "Value (₹)"];
@@ -152,11 +152,11 @@ function Dashboard() {
   const fetchData = () => {
     setLoading(true);
     Promise.all([
-      axios.get("inventory-backend-production-6b10.up.railway.app/inventory"),
-      axios.get("inventory-backend-production-6b10.up.railway.app/summary"),
-      axios.get("inventory-backend-production-6b10.up.railway.app/low-stock"),
-      axios.get("inventory-backend-production-6b10.up.railway.app/recommend"),
-    ]).then(([inv, sum, ls, rec]) => {
+  axios.get(`${API}/inventory`),
+  axios.get(`${API}/summary`),
+  axios.get(`${API}/low-stock`),
+  axios.get(`${API}/recommend`)
+]).then(([inv, sum, ls, rec]) => {
       setData(inv.data);
       setSummary(sum.data);
       setLowStock(ls.data);
