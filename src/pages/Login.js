@@ -330,7 +330,7 @@ function Login() {
           </button>
 
           <div className="login-footer">
-            <a href="#">Forgot password?</a>
+            <a href="/">Forgot password?</a>
             <div className="secure"><div className="sdot" /> SSL Secured</div>
           </div>
         </div>

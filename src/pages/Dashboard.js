@@ -131,7 +131,6 @@ function Dashboard() {
   const [data, setData] = useState([]);
   const [summary, setSummary] = useState([]);
   const [lowStock, setLowStock] = useState([]);
-  const [recommend, setRecommend] = useState({});
   const [search, setSearch] = useState("");
   const [exportOpen, setExportOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -161,7 +160,6 @@ function Dashboard() {
       setData(inv.data);
       setSummary(sum.data);
       setLowStock(ls.data);
-      setRecommend(rec.data);
       setLoading(false);
     }).catch(() => setLoading(false));
   };

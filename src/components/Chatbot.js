@@ -3,7 +3,7 @@ import axios from "axios";
 
 const BRAND = "#FF7A00";
 const BRAND_DARK = "#E06500";
-const BRAND_LIGHT = "#FFF3E8";
+
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
