@@ -152,10 +152,10 @@ function Dashboard() {
   const fetchData = () => {
     setLoading(true);
     Promise.all([
-      axios.get("http://127.0.0.1:5000/inventory"),
-      axios.get("http://127.0.0.1:5000/summary"),
-      axios.get("http://127.0.0.1:5000/low-stock"),
-      axios.get("http://127.0.0.1:5000/recommend"),
+      axios.get("inventory-backend-production-6b10.up.railway.app/inventory"),
+      axios.get("inventory-backend-production-6b10.up.railway.app/summary"),
+      axios.get("inventory-backend-production-6b10.up.railway.app/low-stock"),
+      axios.get("inventory-backend-production-6b10.up.railway.app/recommend"),
     ]).then(([inv, sum, ls, rec]) => {
       setData(inv.data);
       setSummary(sum.data);
